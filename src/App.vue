@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import componentHeader from '@/components/componentHeader.vue'
 import componentHint from '@/components/componentHint.vue'
+import componentTable from './components/componentTable.vue'
 </script>
 
 <template>
   <main>
     <component-header />
     <component-hint />
+
+    <component-table />
   </main>
 </template>
 
@@ -46,5 +49,14 @@ button {
   &:has(svg) {
     line-height: 0;
   }
+}
+
+input {
+  background: unset;
+  border: 1px solid;
+  border-radius: 3px;
+  font: inherit;
+  padding: 10px;
+  width: 100%;
 }
 </style>
