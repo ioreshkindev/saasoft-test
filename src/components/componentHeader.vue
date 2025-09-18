@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import iconPlus from '@/components/icons/iconPlus.vue'
+import { useStore } from '@/stores'
+
+const store = useStore()
 </script>
 
 <template>
   <header>
     <h3>Учетные записи</h3>
 
-    <button type="button">
+    <button type="button" v-on:click="store.addRecord()">
       <icon-plus />
     </button>
   </header>

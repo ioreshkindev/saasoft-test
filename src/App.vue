@@ -56,7 +56,12 @@ input {
   border: 1px solid;
   border-radius: 3px;
   font: inherit;
+  outline: none;
   padding: 10px;
   width: 100%;
+}
+
+ul {
+  list-style: none;
 }
 </style>
