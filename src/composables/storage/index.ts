@@ -1,11 +1,5 @@
 import type { StorageType } from './types'
 
-/**
- * Создает интерфейс для работы с хранилищем.
- *
- * @param {Storage} storage - Объект хранилища (localStorage, sessionStorage)
- * @returns {StorageType} Объект с методами для работы с хранилищем
- */
 export const createStorage = (storage: Storage): StorageType => ({
   read<T>(key: string): T | null {
     const payload = storage.getItem(key)

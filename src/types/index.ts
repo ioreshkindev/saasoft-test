@@ -1,6 +1,6 @@
 export type RecordType = 'Локальная' | 'LDAP'
 
-export type AccountField = 'label' | 'login' | 'password' | 'type'
+export type AccountField = 'login' | 'password'
 
 export type AccountErrors = Partial<Record<AccountField, boolean>>
 

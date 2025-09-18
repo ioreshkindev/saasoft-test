@@ -16,7 +16,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <article v-on:click="selected = !selected" v-outside="() => (selected = false)">
+  <article v-on:click="selected = !selected">
     <p>{{ props.type }}</p>
 
     <icon-chevron-down />

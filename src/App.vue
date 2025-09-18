@@ -64,4 +64,8 @@ input {
 ul {
   list-style: none;
 }
+
+.error {
+  border-color: tomato;
+}
 </style>

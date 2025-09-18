@@ -32,5 +32,33 @@ export const useStore = defineStore('app', () => {
     storage.write('accountData', accountData.value)
   }
 
-  return { recordOptions, accountData, addRecord, removeRecord }
+  const parseLabel = (raw: string) => {
+    return raw
+      .trim()
+      .split(';')
+      .filter((el) => el !== '')
+      .map((el) => ({ text: el }))
+  }
+
+  const validate = (account: AccountType) => {
+    if (!account.login.length) {
+      account.errors.login = true
+    } else {
+      account.errors.login = false
+    }
+
+    if (account.type !== 'LDAP' && !account.password?.length) {
+      account.errors.password = true
+    } else {
+      account.errors.password = false
+    }
+
+    if (!account.errors.login && !account.errors.password) {
+      account.errors = {}
+
+      saveRecord()
+    }
+  }
+
+  return { recordOptions, accountData, addRecord, removeRecord, parseLabel, saveRecord, validate }
 })
